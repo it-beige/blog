@@ -39,6 +39,13 @@ const routes = [
     meta: { title: '登录页' },
     component: () => import('../views/Login')
   },
+  {
+    path: '/demo',
+    name: 'Demo',
+    title: '函数式编程',
+    meta: { title: '函数式编程' },
+    component: () => import('../views/Demo')
+  },
   { // 路由匹配捕获所有路由来处理 404 Not found => 这里就涉及到了路由匹配的优先级, 根据路由写的顺序
     // 谁先定义的，谁的优先级就最高。
     path: '*',
@@ -75,7 +82,6 @@ router.beforeEach((to, from, next) => {
     next({name: 'Login'}) 
   }else next()
 
-  
  
 })
 
